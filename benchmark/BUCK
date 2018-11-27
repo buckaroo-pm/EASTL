@@ -1,0 +1,16 @@
+cxx_binary(
+  name = 'benchmark',
+  header_namespace = '',
+  headers = subdir_glob([
+    ('source', '**/*.h'),
+  ]),
+  srcs = glob([
+    'source/**/*.cpp',
+  ]),
+  deps = [
+    '//:eastl',
+    '//test:test',
+    '//test/packages/EAStdC:eastdc',
+    '//test/packages/EATest:eatest',
+  ],
+)

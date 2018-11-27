@@ -1,0 +1,17 @@
+cxx_library(
+  name = 'eastdc',
+  header_namespace = 'EAStdC',
+  exported_headers = subdir_glob([
+    ('include/EAStdC', '**/*.h'),
+  ]),
+  srcs = glob([
+    'source/**/*.cpp',
+  ]),
+  visibility = [
+    'PUBLIC',
+  ],
+  deps = [
+    '//test/packages/EAAssert:eaassert',
+    '//test/packages/EABase:eabase',
+  ],
+)
